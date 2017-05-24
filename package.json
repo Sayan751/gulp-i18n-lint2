@@ -1,0 +1,19 @@
+{
+  "name": "gulp-i18n-lint",
+  "version": "1.0.0",
+  "description": "validate i18n keys and it's attributes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Net at Work GmbH",
+  "license": "ISC",
+  "publishConfig": {
+	  "registry":"https://code.netatwork.de/tfs/DefaultCollection/_packaging/default/npm/registry"
+  },
+  "dependencies": {
+    "gulp-util": "^3.0.7",
+    "through": "^2.3.8",
+    "lodash": "^4.5.0"
+  }
+}
