@@ -1,5 +1,5 @@
 {
-  "name": "gulp-i18n-lint",
+  "name": "gulp-i18n-lint2",
   "version": "1.0.0",
   "description": "validate i18n keys and it's attributes",
   "main": "index.js",
