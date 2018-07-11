@@ -1,7 +1,5 @@
-var path = require('path');
-var gutil = require('gulp-util');
+var PluginError = require('plugin-error');
 var through = require('through');
-var _ = require('lodash');
 
 var PLUGIN_NAME = 'gulp-i18n-lint';
 
@@ -20,7 +18,7 @@ module.exports = function (parent) {
         }
 
         if (file.isStream()) {
-            return this.emit('error', new gutil.PluginError(PLUGIN_NAME, PLUGIN_NAME + ': Streaming not supported!'));
+            return this.emit('error', new PluginError(PLUGIN_NAME, 'Streaming not supported!'));
         }
 
         if (!firstFile) {
@@ -31,7 +29,7 @@ module.exports = function (parent) {
             parsed = JSON.parse(file.contents.toString('utf8'));
         } catch (err) {
             err.message = 'Error while parsing ' + file.path + ': ' + err.message;
-            return this.emit('error', new gutil.PluginError(PLUGIN_NAME, err));
+            return this.emit('error', new PluginError(PLUGIN_NAME, err));
         }
 
         for (var sourceFile in parsed) {
